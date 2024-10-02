@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "***** Git Acitvated ******"
+
+echo " "
+
+echo " Git add (.) or another method? "
+echo ""
+
+read -p "Options : [.], [ -v ], [a filename]: " ans1
+
+if [[ -n "$ans1" ]]; then
+    echo "Ok! Git add ${ans1}"
+    git add $ans1
+
+    echo ""
+    read -p "Commit message: " mess
+
+    git commit -m "${mess}"
+
+    git push
+
+else
+    echo "Please answer using . or a filename!!"
+    exit 1
+
+fi
